@@ -6,7 +6,7 @@ function MyTodoList() {
   const allTasks = tasksList.map(
     function(item) {
       return (
-        <MyTodoItem key={item.id} taskName={item.task} />
+        <MyTodoItem key={item.id} task={item} />
       )
     }
   )
