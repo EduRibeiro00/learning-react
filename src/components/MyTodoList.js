@@ -1,21 +1,22 @@
-import React from 'react';
-import MyTodoItem from './MyTodoItem.js' 
-import tasksList from '../data/tasksList.js'
+import React from 'react'
+import MyTodoItem from './MyTodoItem.js'
 
-function MyTodoList() {
-  const allTasks = tasksList.map(
-    function(item) {
+class MyTodoList extends React.Component {
+    render() {
+      const taskComponent = this.props.tasks.map(
+        function(item) {
+          return (
+            <MyTodoItem key={item.id} task={item} />
+          )
+        }
+      )
+
       return (
-        <MyTodoItem key={item.id} task={item} />
+        <div className="todo-list">
+          {taskComponent}
+        </div>
       )
     }
-  )
-
-  return (
-    <div className="todo-list">
-      {allTasks}
-    </div>
-  );
 }
 
 export default MyTodoList

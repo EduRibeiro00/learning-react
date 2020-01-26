@@ -5,6 +5,10 @@ body {
   background-color: var(--body-color);
 }
 
+.main {
+  text-align: center;
+}
+
 .todo-item {
   color: blue;
   display: flex;
