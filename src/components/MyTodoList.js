@@ -17,7 +17,10 @@ class MyTodoList extends Component {
     this.setState(prevState => {
       const newTasksList = prevState.tasksList.map(taskItem => {
         if (taskItem.id === id) {
-          taskItem.completed = !taskItem.completed
+          return {
+            ...taskItem,
+            completed : !taskItem.completed
+          }
         }
         return taskItem
       })
