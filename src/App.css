@@ -23,6 +23,13 @@ body {
   margin: 1.9em 1em;
 }
 
+.completed {
+  opacity: 0.7;
+  color: grey;
+  font-style: italic;
+  text-decoration: line-through;
+}
+
 .todo-item p {
   font-weight: bold;
   margin: auto 0.5em;
