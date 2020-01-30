@@ -8,12 +8,10 @@ class MyTodoList extends Component {
     this.state = {
       tasksList : tasksList
     }
-    
-    this.handleCheckboxClick = this.handleCheckboxClick.bind(this)
   }
 
 
-  handleCheckboxClick(id) {
+  handleCheckboxClick = (id) => {
     this.setState(prevState => {
       const newTasksList = prevState.tasksList.map(taskItem => {
         if (taskItem.id === id) {
@@ -32,7 +30,7 @@ class MyTodoList extends Component {
   }
 
 
-  render() {
+  render = () => {
     const taskComponent = this.state.tasksList.map(item => {
         return (
           <MyTodoItem 

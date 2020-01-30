@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 class MyTodoItem extends Component {
-    render() {
+    render = () => {
         return (
             <div className={this.props.task.completed ? "todo-item completed" : "todo-item"}>
                 <input type="checkbox" 

@@ -4,7 +4,7 @@ import MyTodoList from './components/MyTodoList.js'
 import GreetingsLine from './components/GreetingsLine.js'
 
 class App extends Component {
-  render() {
+  render = () => {
     return (
       <div className="main">
         <GreetingsLine />

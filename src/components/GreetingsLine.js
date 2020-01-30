@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 
 class GreetingsLine extends Component {
-    getGreettingString() {
+    getGreettingString = () => {
         const date = new Date()
         let greetingString = "Good "
         if(date.getHours() < 12) {
@@ -17,7 +17,7 @@ class GreetingsLine extends Component {
         return greetingString
     }
 
-    render() {
+    render = () => {
         const greetingString = this.getGreettingString()
 
         return (
