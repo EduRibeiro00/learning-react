@@ -8,7 +8,7 @@ class MyTodoList extends Component {
   }
 
 
-  handleCheckboxClick = (id) => {
+  handleCheckboxClick = id => {
     this.setState(prevState => {
       const newTasksList = prevState.tasksList.map(taskItem => {
         if (taskItem.id === id) {
