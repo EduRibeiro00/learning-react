@@ -1,50 +1,40 @@
-import React, {Component} from 'react'
+import React, { useState } from 'react'
 import MyTodoItem from './MyTodoItem.js'
 import tasksList from '../data/tasksList.js'
 
-class MyTodoList extends Component {
-  state = {
-    tasksList : tasksList
-  }
-
-
-  handleCheckboxClick = id => {
-    this.setState(prevState => {
-      const newTasksList = prevState.tasksList.map(taskItem => {
-        if (taskItem.id === id) {
-          return {
-            ...taskItem,
-            completed : !taskItem.completed
-          }
+function handleCheckboxClick(setTasks, id) {
+  setTasks(prevTasks => {
+    const newTasksList = prevTasks.map(taskItem => {
+      if (taskItem.id === id) {
+        return {
+          ...taskItem,
+          completed : !taskItem.completed
         }
-        return taskItem
-      })
-      
-      return {
-        tasksList : newTasksList
       }
+      return taskItem
     })
-  }
-
-
-  render = () => {
-    const taskComponent = this.state.tasksList.map(item => {
-        return (
-          <MyTodoItem 
-            key={item.id} 
-            task={item} 
-            handleCheckboxClick={this.handleCheckboxClick}
-          />
-        )
-      }
-    )
-
-    return (
-      <div className="todo-list">
-        {taskComponent}
-      </div>
-    )
-  }
+    
+    return newTasksList
+  })
 }
 
-export default MyTodoList
+export default function MyTodoList() {
+  const [tasks, setTasks] = useState(tasksList)
+
+  const taskComponent = tasks.map(item => {
+      return (
+        <MyTodoItem 
+          key={item.id} 
+          task={item} 
+          handleCheckboxClick={handleCheckboxClick.bind(this, setTasks)}
+        />
+      )
+    }
+  )
+
+  return (
+    <div className="todo-list">
+      {taskComponent}
+    </div>
+  )
+}

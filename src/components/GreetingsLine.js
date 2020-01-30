@@ -1,29 +1,19 @@
-import React, {Component} from 'react'
+import React from 'react'
 
-class GreetingsLine extends Component {
-    getGreettingString = () => {
-        const date = new Date()
-        let greetingString = "Good "
-        if(date.getHours() < 12) {
-          greetingString += "morning!"
-        }
-        else if (date.getHours() < 19) {
-          greetingString += "afternoon!"
-        }
-        else {
-          greetingString += "night!"
-        }
-  
-        return greetingString
+export default function GreetingsLine() {
+    const date = new Date()
+    let greetingString = "Good "
+    if(date.getHours() < 12) {
+      greetingString += "morning!"
+    }
+    else if (date.getHours() < 19) {
+      greetingString += "afternoon!"
+    }
+    else {
+      greetingString += "night!"
     }
 
-    render = () => {
-        const greetingString = this.getGreettingString()
-
-        return (
-            <p>{greetingString}</p>
-        )
-    }
+    return (
+        <p>{greetingString}</p>
+    )
 }
-
-export default GreetingsLine
