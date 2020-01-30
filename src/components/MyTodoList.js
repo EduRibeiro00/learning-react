@@ -26,7 +26,7 @@ export default function MyTodoList() {
         <MyTodoItem 
           key={item.id} 
           task={item} 
-          handleCheckboxClick={handleCheckboxClick}
+          handleClick={handleCheckboxClick}
         />
       )
     }
