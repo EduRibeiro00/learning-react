@@ -3,11 +3,8 @@ import MyTodoItem from './MyTodoItem.js'
 import tasksList from '../data/tasksList.js'
 
 class MyTodoList extends Component {
-  constructor() {
-    super()
-    this.state = {
-      tasksList : tasksList
-    }
+  state = {
+    tasksList : tasksList
   }
 
 
